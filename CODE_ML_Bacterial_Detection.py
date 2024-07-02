@@ -150,7 +150,7 @@ def show_full_sequence(seq_description, sequence_record):
 
 def load_fasta_file():
     global reference_sequences
-    file_path = r"C:\Users\prath\Desktop\freshwater chip\seq_EX.fasta" # Provide the file path here
+    file_path = r"sample_Reference_file.fasta" # Provide the file path here
     try:
         reference_sequences = SeqIO.to_dict(SeqIO.parse(file_path, "fasta"))
         # messagebox.showinfo("Success", "FASTA file loaded successfully!")
