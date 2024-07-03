@@ -4,36 +4,36 @@ This project introduces a k-mer based prediction model for bacterial identificat
 
 
 Explanation of the Code:
+This Python code creates a graphical user interface (GUI) for comparing a DNA sequence against a reference database using k-mer matching. The application uses tkinter for the GUI and BioPython for handling DNA sequences. Here are the main features and components:
 
-This Python code creates a graphical user interface (GUI) for comparing a DNA sequence against a reference database using a technique called k-mer matching. The application uses the tkinter library for the GUI and BioPython for handling DNA sequences. Here's a step-by-step explanation of how the code works:
+Imports and Global Variables:
 
-1)Imports and Global Variables:
-*The necessary libraries are imported: tkinter for the GUI, SeqIO from BioPython for reading DNA sequences, and some machine learning tools from scikit-learn.
-*A global dictionary, reference_sequences, is defined to store the reference DNA sequences.
+Imports necessary libraries: tkinter, SeqIO from BioPython, and some tools from scikit-learn.
+Defines a global dictionary reference_sequences to store reference DNA sequences.
+K-mer Matching Function:
 
-> K-mer Matching Function:
-The kmer_matching function takes a query DNA sequence and compares it to reference sequences by breaking them into smaller fragments called k-mers (of length k).
-It returns a dictionary where each reference sequence ID is mapped to the percentage of k-mers it shares with the query sequence and a list of these matching k-mers.
+kmer_matching: Compares a query DNA sequence with reference sequences by breaking them into smaller fragments called k-mers.
+Returns a dictionary with the percentage of shared k-mers and the matching fragments for each reference sequence.
+Comparison Function:
 
-> Comparison Function:
-The compare_sequences function uses kmer_matching to compare the query sequence against all reference sequences.
-It returns a list of the top 10 matches, including the sequence ID, description, match percentage, and top 1 or 2 matching k-mer fragments.
+compare_sequences: Uses kmer_matching to find the top 10 matches from the reference sequences.
+Returns a list of matches including sequence ID, description, match percentage, and top matching k-mer fragments.
+GUI Components:
 
-> GUI Components:
-Main Window: The main window contains an entry box for the user to input a DNA sequence and another entry box to specify the k-mer length.
-Labels and Buttons: There are labels to display instructions and buttons to initiate the sequence comparison.
+Main Window: Contains entry boxes for the DNA sequence and k-mer length.
+Labels and Buttons: Display instructions and initiate the sequence comparison.
+Event Handling Functions:
 
-> Event Handling Functions:
-compare_sequences_button_click: This function is triggered when the "Compare sequences" button is clicked. It loads the reference sequences from a FASTA file, validates the query sequence, performs the k-mer matching, and displays the results.
-show_comparison_results: This function displays the comparison results in a new window using a table format.
-on_hit_double_click: This function is triggered when a user double-clicks on a result entry, showing the full DNA sequence of the selected match.
-show_full_sequence: This function creates a new window to display the full sequence of a selected DNA record.
+compare_sequences_button_click: Triggered when the "Compare sequences" button is clicked. Loads reference sequences, validates the query sequence, performs k-mer matching, and displays results.
+show_comparison_results: Displays comparison results in a table format.
+on_hit_double_click: Shows the full DNA sequence of a selected match when a result entry is double-clicked.
+show_full_sequence: Creates a new window to display the full sequence of a selected DNA record.
+Utility Functions:
 
-> Utility Functions:
-load_fasta_file: This function loads the reference DNA sequences from a FASTA file.
-is_dna_sequence: This function checks if a given sequence is a valid DNA sequence (containing only A, C, G, or T).
-remove_placeholder: This function removes placeholder text from the query entry box when the user clicks on it.
+load_fasta_file: Loads reference DNA sequences from a FASTA file.
+is_dna_sequence: Checks if a given sequence is a valid DNA sequence (only A, C, G, T).
+remove_placeholder: Removes placeholder text from the query entry box when clicked.
+Main GUI Execution:
 
-> Main GUI Execution:
-The main part of the code creates the GUI, including the main window, entry boxes for the query sequence and k-mer length, and buttons for comparing sequences.
-When the user clicks the "Compare sequences" button, the application loads the reference sequences, validates the query sequence, performs the comparison, and displays the results in a new window.
+Creates the main window, entry boxes for the query sequence and k-mer length, and buttons for comparing sequences.
+When the "Compare sequences" button is clicked, it loads reference sequences, validates the query, performs the comparison, and displays the results in a new window.
