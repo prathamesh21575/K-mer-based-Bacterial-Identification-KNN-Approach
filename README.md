@@ -7,9 +7,9 @@ Explanation of the Code:
 
 This Python code creates a graphical user interface (GUI) for comparing a DNA sequence against a reference database using a technique called k-mer matching. The application uses the tkinter library for the GUI and BioPython for handling DNA sequences. Here's a step-by-step explanation of how the code works:
 
-> Imports and Global Variables:
-The necessary libraries are imported: tkinter for the GUI, SeqIO from BioPython for reading DNA sequences, and some machine learning tools from scikit-learn.
-A global dictionary, reference_sequences, is defined to store the reference DNA sequences.
+1)Imports and Global Variables:
+*The necessary libraries are imported: tkinter for the GUI, SeqIO from BioPython for reading DNA sequences, and some machine learning tools from scikit-learn.
+*A global dictionary, reference_sequences, is defined to store the reference DNA sequences.
 
 > K-mer Matching Function:
 The kmer_matching function takes a query DNA sequence and compares it to reference sequences by breaking them into smaller fragments called k-mers (of length k).
